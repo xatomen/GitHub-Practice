@@ -15,16 +15,16 @@
     1. Tres
 
 - Checklist
-    - [] No tildado
+    - [ ] No tildado
     - [x] Tildado
-    - [] No tildado
+    - [ ] No tildado
 
-´´´C++
+```C++
 int main(){
     cout >> "Hello world!" >> endl;
     return 0;
 }
-´´´
+```
 
 Columna 1 | Columna 2
 --------- | -------
