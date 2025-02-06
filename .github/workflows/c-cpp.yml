@@ -13,16 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+
+    - name: Set up GCC
+      run: sudo apt-get install g++
 
     - name: Build C++
-      run: |
-        g++ -o main main.cpp
-        ./main ${{github.event.inputs.github_user}}
+      run: g++ -o main main.cpp
+
+    - name: Run executable
+      run: ./main "GitHubUser"
