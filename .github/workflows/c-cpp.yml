@@ -25,4 +25,9 @@ jobs:
       run: g++ -o main main.cpp
 
     - name: Run executable
-      run: ./main "GitHubUser"
+      run: |
+        GITHUB_USER=$(echo $GITHUB_REPOSITORY | cut -d'/' -f1)
+        ./main "$GITHUB_USER"
+
+    - name: Echo name
+      run: echo $GITHUB_USER
